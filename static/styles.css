@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1e6d6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.welcome {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-link {
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  color: #525960;
+  text-align: center;
+}
+
+a {
+  color: #525960;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
