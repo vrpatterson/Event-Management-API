@@ -12,6 +12,7 @@ Users can register, login, and access the API endpoints through Postman.
 - Login: Log in using your credentials to obtain an access token.
 
 - API Access: With the access token, you can make API requests to add new users, events, and coordinators.
+- Testing: Postman test suite and environment files have been provided.
 
 ## Endpoints
 - POST /users: Add a new user to the system.
