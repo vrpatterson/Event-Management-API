@@ -70,7 +70,7 @@ def events_get_post():
 
         output = paginate(query, q_limit, q_offset)
 
-        return json.dumps(output)
+        return json.dumps(output), 201
     
     else:
         return 'Method not recognized'
@@ -108,7 +108,7 @@ def event_by_id(id):
         if not key:
             return 'No event found with this ID'
         client.delete(key)
-        return('', 200)
+        return('', 204)
     
     else:
         return 'Method not recognized'
