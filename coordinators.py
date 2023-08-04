@@ -82,14 +82,14 @@ def coordinators_by_id(id):
             if coordinators['owner'] != payload['sub']:
                 return jsonify(error="Access denied, you do not own this event"), 403
             if 'events_id' in content:
-                if coordinators.get('event') is not None:
+                if coordinators.get('events_id') is not None:
                     return jsonify(error="The coordinators is already associated with an event"), 400
                 events_key = client.key(constants.events, int(content['events_id']))
                 events = client.get(key=events_key)
                 if events:
                     events['coordinators'].append(coordinators.key.id)
                     client.put(events)
-                    coordinators['events'] = events.key.id
+                    coordinators['events_id'] = events.key.id
                 else:
                     return jsonify(error="No event with this events_id exists"), 404
                 del content['events_id']
