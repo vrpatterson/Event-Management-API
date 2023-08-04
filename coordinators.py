@@ -60,8 +60,6 @@ def coordinators_by_id(id):
         coordinators_key = client.key(constants.coordinators, int(id))
         coordinators = client.get(key=coordinators_key)
 
-        if not coordinators:
-            return 'No coordinators found with this ID'
         if payload['sub'] != coordinators['owner']:
             return jsonify(error="Access denied"), 403
         
