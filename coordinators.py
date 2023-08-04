@@ -22,7 +22,7 @@ def coordinators_get_post():
             'email': content['email'],
             'website': content['website'],
             'owner': payload['sub'],
-            'event': None
+            'events_id': None
             })
         client.put(new_coordinators)       # add new_coordinators to datastore
         new_coordinators['self'] = request.base_url + '/' + str(new_coordinators.key.id)
