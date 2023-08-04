@@ -46,7 +46,7 @@ def coordinators_get_post():
 
         output = paginate(query, q_limit, q_offset)
 
-        return json.dumps(output)
+        return json.dumps(output), 201
     
     else:
         return 'Method not recognized'
@@ -73,7 +73,7 @@ def coordinators_by_id(id):
                 events['self'] = request.url_root + '/' + str(events.key.id)
                 coordinators['events'] = events                
         
-        return json.dumps(coordinators)
+        return json.dumps(coordinators), 200
 
     elif request.method == 'PATCH':
         payload = verify_jwt(request)
